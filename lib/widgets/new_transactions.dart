@@ -68,7 +68,7 @@ class _NewTransactionState extends State<NewTransaction> {
               keyboardType: TextInputType.number,
               onSubmitted: (_) => _submitData(), // i accept it but i dont plan on using the argument.
             ),
-            Container(
+            SizedBox(
               height: 70,
               child: Row(
                 children: [
@@ -82,7 +82,7 @@ class _NewTransactionState extends State<NewTransaction> {
                       primary: Theme.of(context).primaryColor,
                     ),
                     onPressed: _presentDatePicker,
-                    child: Text(
+                    child: const Text(
                       'Choose Date',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
