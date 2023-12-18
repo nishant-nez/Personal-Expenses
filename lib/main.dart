@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         errorColor: Colors.red,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
-              titleLarge: TextStyle(
+              titleLarge: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             ),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
-                titleLarge: TextStyle(
+                titleLarge: const TextStyle(
                   fontFamily: 'OpenSans',
                   fontSize: 20,
                 ),
@@ -36,12 +36,14 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Personal Expenses',
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -78,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Transaction> get _recentTransactions {
     return _userTransactions.where((tx) {
       return tx.date.isAfter(DateTime.now().subtract(
-        Duration(days: 7),
+        const Duration(days: 7),
       ));
     }).toList();
   }
